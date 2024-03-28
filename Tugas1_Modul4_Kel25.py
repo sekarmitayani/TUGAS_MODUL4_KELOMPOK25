@@ -2,19 +2,16 @@ class PencatatanPengeluaran:
     def __init__(self):
         self.pengeluaran = []
 
-    # Method non-return type untuk menambahkan pengeluaran
     def tambah_pengeluaran(self, item, jumlah):
         self.pengeluaran.append({"item": item, "jumlah": jumlah})
         print(f"Pengeluaran '{item}' sebesar {jumlah} telah ditambahkan.")
 
-    # Method dengan return type untuk menampilkan total pengeluaran
     def total_pengeluaran(self):
         total = 0
         for item in self.pengeluaran:
             total += item["jumlah"]
         return total
 
-    # Method non-return type untuk menampilkan daftar pengeluaran
     def tampilkan_pengeluaran(self):
         if not self.pengeluaran:
             print("Belum ada pengeluaran yang dicatat.")
@@ -23,12 +20,10 @@ class PencatatanPengeluaran:
             for idx, item in enumerate(self.pengeluaran, 1):
                 print(f"{idx}. {item['item']}: {item['jumlah']}")
     
-    # Function dengan return type untuk meminta input nama item
     def input_item(self):
         item = input("Masukkan nama item pengeluaran: ")
         return item
 
-    # Function dengan return type untuk meminta input jumlah pengeluaran
     def input_jumlah(self):
         while True:
             try:
@@ -37,7 +32,6 @@ class PencatatanPengeluaran:
             except ValueError:
                 print("Masukkan angka yang valid.")
 
-# Main program
 catatan = PencatatanPengeluaran()
 
 while True:
